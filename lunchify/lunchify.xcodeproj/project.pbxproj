@@ -23,6 +23,13 @@
 		0760BD271BC9960E008C3CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0760BD031BC9960E008C3CC5 /* UIKit.framework */; };
 		0760BD2F1BC9960E008C3CC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0760BD2D1BC9960E008C3CC5 /* InfoPlist.strings */; };
 		0760BD311BC9960E008C3CC5 /* lunchifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0760BD301BC9960E008C3CC5 /* lunchifyTests.m */; };
+		24376D3C1BC9A31D00638C6B /* LFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D3B1BC9A31D00638C6B /* LFUser.m */; settings = {ASSET_TAGS = (); }; };
+		24376D401BC9A34700638C6B /* LFVote.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D3F1BC9A34700638C6B /* LFVote.m */; settings = {ASSET_TAGS = (); }; };
+		24376D431BC9A48C00638C6B /* LFChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D421BC9A48C00638C6B /* LFChoice.m */; settings = {ASSET_TAGS = (); }; };
+		24376D461BC9A84800638C6B /* LFRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D451BC9A84800638C6B /* LFRestaurant.m */; settings = {ASSET_TAGS = (); }; };
+		24376D491BC9AACB00638C6B /* LFVoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D481BC9AACB00638C6B /* LFVoteManager.m */; settings = {ASSET_TAGS = (); }; };
+		24376D4C1BC9B33300638C6B /* LFServerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D4B1BC9B33300638C6B /* LFServerApi.m */; settings = {ASSET_TAGS = (); }; };
+		24376D4F1BC9D13C00638C6B /* LFChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D4E1BC9D13C00638C6B /* LFChoiceViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,20 @@
 		0760BD2C1BC9960E008C3CC5 /* lunchifyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lunchifyTests-Info.plist"; sourceTree = "<group>"; };
 		0760BD2E1BC9960E008C3CC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0760BD301BC9960E008C3CC5 /* lunchifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lunchifyTests.m; sourceTree = "<group>"; };
+		24376D3A1BC9A31D00638C6B /* LFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFUser.h; sourceTree = "<group>"; };
+		24376D3B1BC9A31D00638C6B /* LFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFUser.m; sourceTree = "<group>"; };
+		24376D3E1BC9A34700638C6B /* LFVote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFVote.h; sourceTree = "<group>"; };
+		24376D3F1BC9A34700638C6B /* LFVote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFVote.m; sourceTree = "<group>"; };
+		24376D411BC9A48C00638C6B /* LFChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFChoice.h; sourceTree = "<group>"; };
+		24376D421BC9A48C00638C6B /* LFChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFChoice.m; sourceTree = "<group>"; };
+		24376D441BC9A84800638C6B /* LFRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRestaurant.h; sourceTree = "<group>"; };
+		24376D451BC9A84800638C6B /* LFRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRestaurant.m; sourceTree = "<group>"; };
+		24376D471BC9AACB00638C6B /* LFVoteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFVoteManager.h; sourceTree = "<group>"; };
+		24376D481BC9AACB00638C6B /* LFVoteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFVoteManager.m; sourceTree = "<group>"; };
+		24376D4A1BC9B33300638C6B /* LFServerApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFServerApi.h; sourceTree = "<group>"; };
+		24376D4B1BC9B33300638C6B /* LFServerApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFServerApi.m; sourceTree = "<group>"; };
+		24376D4D1BC9D13C00638C6B /* LFChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFChoiceViewController.h; sourceTree = "<group>"; };
+		24376D4E1BC9D13C00638C6B /* LFChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFChoiceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +138,7 @@
 		0760BD051BC9960E008C3CC5 /* lunchify */ = {
 			isa = PBXGroup;
 			children = (
+				24376D3D1BC9A32300638C6B /* Models */,
 				0760BD0E1BC9960E008C3CC5 /* LFAppDelegate.h */,
 				0760BD0F1BC9960E008C3CC5 /* LFAppDelegate.m */,
 				0760BD111BC9960E008C3CC5 /* Main_iPhone.storyboard */,
@@ -127,6 +149,10 @@
 				0760BD1B1BC9960E008C3CC5 /* LFSecondViewController.m */,
 				0760BD1D1BC9960E008C3CC5 /* Images.xcassets */,
 				0760BD061BC9960E008C3CC5 /* Supporting Files */,
+				24376D4A1BC9B33300638C6B /* LFServerApi.h */,
+				24376D4B1BC9B33300638C6B /* LFServerApi.m */,
+				24376D4D1BC9D13C00638C6B /* LFChoiceViewController.h */,
+				24376D4E1BC9D13C00638C6B /* LFChoiceViewController.m */,
 			);
 			path = lunchify;
 			sourceTree = "<group>";
@@ -158,6 +184,23 @@
 				0760BD2D1BC9960E008C3CC5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24376D3D1BC9A32300638C6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24376D3A1BC9A31D00638C6B /* LFUser.h */,
+				24376D3B1BC9A31D00638C6B /* LFUser.m */,
+				24376D3E1BC9A34700638C6B /* LFVote.h */,
+				24376D3F1BC9A34700638C6B /* LFVote.m */,
+				24376D411BC9A48C00638C6B /* LFChoice.h */,
+				24376D421BC9A48C00638C6B /* LFChoice.m */,
+				24376D441BC9A84800638C6B /* LFRestaurant.h */,
+				24376D451BC9A84800638C6B /* LFRestaurant.m */,
+				24376D471BC9AACB00638C6B /* LFVoteManager.h */,
+				24376D481BC9AACB00638C6B /* LFVoteManager.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +304,15 @@
 			files = (
 				0760BD1C1BC9960E008C3CC5 /* LFSecondViewController.m in Sources */,
 				0760BD191BC9960E008C3CC5 /* LFFirstViewController.m in Sources */,
+				24376D4F1BC9D13C00638C6B /* LFChoiceViewController.m in Sources */,
 				0760BD101BC9960E008C3CC5 /* LFAppDelegate.m in Sources */,
+				24376D4C1BC9B33300638C6B /* LFServerApi.m in Sources */,
 				0760BD0C1BC9960E008C3CC5 /* main.m in Sources */,
+				24376D461BC9A84800638C6B /* LFRestaurant.m in Sources */,
+				24376D431BC9A48C00638C6B /* LFChoice.m in Sources */,
+				24376D491BC9AACB00638C6B /* LFVoteManager.m in Sources */,
+				24376D3C1BC9A31D00638C6B /* LFUser.m in Sources */,
+				24376D401BC9A34700638C6B /* LFVote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +527,7 @@
 				0760BD361BC9960E008C3CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0760BD371BC9960E008C3CC5 /* Build configuration list for PBXNativeTarget "lunchifyTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +536,7 @@
 				0760BD391BC9960E008C3CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

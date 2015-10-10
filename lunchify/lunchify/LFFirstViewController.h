@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LFServerApi.h"
 
-@interface LFFirstViewController : UIViewController
+@interface LFFirstViewController : UIViewController <LFServerApiDelegate>
 
 @end
