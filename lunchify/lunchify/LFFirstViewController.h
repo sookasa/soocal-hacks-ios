@@ -1,5 +1,5 @@
 //
-//  LFViewController.h
+//  LFFirstViewController.h
 //  lunchify
 //
 //  Created by Itay Bleier on 10/10/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LFViewController : UIViewController
+@interface LFFirstViewController : UIViewController
 
 @end

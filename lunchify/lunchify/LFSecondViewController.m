@@ -1,18 +1,18 @@
 //
-//  LFViewController.m
+//  LFSecondViewController.m
 //  lunchify
 //
 //  Created by Itay Bleier on 10/10/15.
 //  Copyright (c) 2015 Sookasa. All rights reserved.
 //
 
-#import "LFViewController.h"
+#import "LFSecondViewController.h"
 
-@interface LFViewController ()
+@interface LFSecondViewController ()
 
 @end
 
-@implementation LFViewController
+@implementation LFSecondViewController
 
 - (void)viewDidLoad
 {
