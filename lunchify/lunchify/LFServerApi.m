@@ -110,7 +110,39 @@ static LFServerApi *defaultApi;
 
 -(BOOL)getResultsWithDelegate:(id<LFServerApiDelegate>)delegate
 {
-    return NO;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.BASE_URL_STRING, @"/v1/result"]];
+    
+    [self makeHTTPRequest:url withMethod:@"GET" andValue:nil onCompletion:^(NSData *data, NSURLResponse *resp, NSError *err)
+     {
+         if (err)
+         {
+             [delegate getResultsReturnedWithResults:nil andError:err];
+         }
+         else
+         {
+             NSError *parsingError = nil;
+             id optionsJSON = [NSJSONSerialization
+                               JSONObjectWithData:data
+                               options:0
+                               error:&parsingError];
+             
+             if (parsingError)
+             {
+                 [delegate getResultsReturnedWithResults:nil andError:err];
+             }
+             else
+             {
+                 NSDictionary* resultsDict = (NSDictionary *)optionsJSON;
+                 NSDictionary* result = [resultsDict objectForKey:@"result"];
+                 
+                 NSMutableArray* resultArray = [NSMutableArray new];
+                 [resultArray addObject:[[LFRestaurant alloc] initWithDictionary:result]];
+                 
+                 [delegate getResultsReturnedWithResults:resultArray andError:nil];
+             }
+         }
+     }];
+    return YES;
 }
 
 -(void)makeHTTPRequest:(NSURL*)url withMethod:(NSString*)method andValue:(NSString*)value
