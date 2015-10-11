@@ -23,13 +23,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
     [self.activityIndicator startAnimating];
     [self.errorLabel setHidden:YES];
     
     [self.restaurantName setHidden:YES];
     [[LFServerApi defaultApi] getResultsWithDelegate:self];
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -23,6 +23,7 @@
 		0760BD271BC9960E008C3CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0760BD031BC9960E008C3CC5 /* UIKit.framework */; };
 		0760BD2F1BC9960E008C3CC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0760BD2D1BC9960E008C3CC5 /* InfoPlist.strings */; };
 		0760BD311BC9960E008C3CC5 /* lunchifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0760BD301BC9960E008C3CC5 /* lunchifyTests.m */; };
+		24081FDD1BC9F78900DFD85E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24081FDC1BC9F78900DFD85E /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		24376D3C1BC9A31D00638C6B /* LFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D3B1BC9A31D00638C6B /* LFUser.m */; settings = {ASSET_TAGS = (); }; };
 		24376D401BC9A34700638C6B /* LFVote.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D3F1BC9A34700638C6B /* LFVote.m */; settings = {ASSET_TAGS = (); }; };
 		24376D431BC9A48C00638C6B /* LFChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 24376D421BC9A48C00638C6B /* LFChoice.m */; settings = {ASSET_TAGS = (); }; };
@@ -65,6 +66,7 @@
 		0760BD2C1BC9960E008C3CC5 /* lunchifyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lunchifyTests-Info.plist"; sourceTree = "<group>"; };
 		0760BD2E1BC9960E008C3CC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0760BD301BC9960E008C3CC5 /* lunchifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lunchifyTests.m; sourceTree = "<group>"; };
+		24081FDC1BC9F78900DFD85E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24376D3A1BC9A31D00638C6B /* LFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFUser.h; sourceTree = "<group>"; };
 		24376D3B1BC9A31D00638C6B /* LFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFUser.m; sourceTree = "<group>"; };
 		24376D3E1BC9A34700638C6B /* LFVote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFVote.h; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				24376D4B1BC9B33300638C6B /* LFServerApi.m */,
 				24376D4D1BC9D13C00638C6B /* LFChoiceViewController.h */,
 				24376D4E1BC9D13C00638C6B /* LFChoiceViewController.m */,
+				24081FDC1BC9F78900DFD85E /* LaunchScreen.storyboard */,
 			);
 			path = lunchify;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				0760BD161BC9960E008C3CC5 /* Main_iPad.storyboard in Resources */,
 				0760BD1E1BC9960E008C3CC5 /* Images.xcassets in Resources */,
 				0760BD131BC9960E008C3CC5 /* Main_iPhone.storyboard in Resources */,
+				24081FDD1BC9F78900DFD85E /* LaunchScreen.storyboard in Resources */,
 				0760BD0A1BC9960E008C3CC5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,11 +451,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunchify/lunchify-Prefix.pch";
 				INFOPLIST_FILE = "lunchify/lunchify-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sookasa.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -462,11 +466,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunchify/lunchify-Prefix.pch";
 				INFOPLIST_FILE = "lunchify/lunchify-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "sookasa.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
