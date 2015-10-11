@@ -17,6 +17,14 @@
 
 @implementation LFChoice
 
+-(NSDictionary*)getDictionary
+{
+    NSMutableDictionary *dict = [NSMutableDictionary new];
 
+    [dict setObject:[NSNumber numberWithBool:self.userFeedback] forKey:@"choice"];
+    [dict setObject:self.restaurant.identifier forKey:@"id"];
+    
+    return dict;
+}
 
 @end

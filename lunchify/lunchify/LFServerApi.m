@@ -82,7 +82,30 @@ static LFServerApi *defaultApi;
 
 -(BOOL)castVote:(LFVote*)vote withDelegate:(id<LFServerApiDelegate>)delegate
 {
-    return NO;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.BASE_URL_STRING, @"/v1/votes"]];
+    
+    NSMutableDictionary * results = [NSMutableDictionary new];
+    
+//    [results setObject:nil forKey:@"date"];
+    
+    NSMutableArray *choicesForPosting = [NSMutableArray new];
+    
+    for (LFChoice *choice in [vote getChoices])
+    {
+        [choicesForPosting addObject:[choice getDictionary]];
+    }
+    
+    [results setObject:vote.user.userEmail forKey:@"email"];
+    [results setObject:choicesForPosting forKey:@"choices"];
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:results options:0 error:nil];
+    NSString *value = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    [self makeHTTPRequest:url withMethod:@"POST" andValue:value onCompletion:^(NSData *data, NSURLResponse *resp, NSError *err)
+     {
+         [delegate castVoteReturnedWithError:err];
+     }];
+    return YES;
 }
 
 -(BOOL)getResultsWithDelegate:(id<LFServerApiDelegate>)delegate

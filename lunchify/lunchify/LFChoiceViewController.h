@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LFServerApi.h"
 
-@interface LFChoiceViewController : UIViewController
+@interface LFChoiceViewController : UIViewController <LFServerApiDelegate>
 
 @property (strong, atomic) NSArray *                options;
 

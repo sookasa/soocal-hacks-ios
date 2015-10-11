@@ -8,11 +8,18 @@
 
 #import "LFChoiceViewController.h"
 #import "LFRestaurant.h"
+#import "LFVoteManager.h"
+
 
 @interface LFChoiceViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *      restaurantName;
 
 @property (assign, atomic) unsigned int             currentIndex;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipe;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *rightSwipe;
+@property (weak, nonatomic) IBOutlet UIImageView *restImage;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoadingIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *uploadingLabel;
 
 @end
 
@@ -24,26 +31,70 @@
     
     self.currentIndex = 0;
     
+    [self.uploadingLabel setHidden:YES];
+    
     [self populateCurrent];
 }
 
 -(void)populateCurrent
 {
+    [self resetPage];
+    
     if ([self.options count] > self.currentIndex)
     {
         LFRestaurant *rest = [self.options objectAtIndex:self.currentIndex];
         self.restaurantName.text = rest.name;
+        
+        [self performSelectorInBackground:@selector(loadImage:) withObject:[NSURL URLWithString:rest.pictureUrl]];
     }
     else
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.uploadingLabel setHidden:NO];
+        [self.imageLoadingIndicator startAnimating];
+        [[LFServerApi defaultApi] castVote:[[LFVoteManager defaultManager] getCurrentVote] withDelegate:self];
     }
     
+}
+
+-(void)resetPage
+{
+    self.restaurantName.text = @"";
+    self.restImage.image = nil;
+    
+}
+
+- (void)loadImage:(NSURL*)url
+{
+    [self.imageLoadingIndicator performSelectorOnMainThread:@selector(startAnimating) withObject:nil waitUntilDone:NO];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    [self.restImage performSelectorOnMainThread:@selector(setImage:) withObject:img waitUntilDone:YES];
+    [self.imageLoadingIndicator performSelectorOnMainThread:@selector(stopAnimating) withObject:nil waitUntilDone:NO];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)makeChoice:(BOOL)feedback {
+    LFChoice* currentChoice = [LFChoice new];
+    currentChoice.restaurant = [self.options objectAtIndex:self.currentIndex];
+    currentChoice.userFeedback = feedback;
+    [[[LFVoteManager defaultManager] getCurrentVote] addChoice:currentChoice];
+}
+
+- (IBAction)rightSwipeHappened:(id)sender {
+    [self makeChoice:YES];
+    self.currentIndex++;
+    [self populateCurrent];
+    
+}
+
+- (IBAction)leftSwipeHappened:(id)sender {
+    [self makeChoice:NO];
+    self.currentIndex++;
+    [self populateCurrent];
 }
 
 /*
@@ -55,5 +106,31 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark - LFServerApiDelegate
+
+- (void)getTodaysOptionsReturnedWithOptions:(NSArray *)options andError:(NSError *)err
+{
+}
+
+- (void)getResultsReturnedWithResults:(NSArray *)results andError:(NSError *)err
+{
+    
+}
+
+- (void)castVoteReturnedWithError:(NSError *)err
+{
+    if (err)
+    {
+        NSLog(@"CAST VOTE FAILED!!!!!");
+    }
+    [self performSelectorOnMainThread:@selector(dismiss) withObject:nil waitUntilDone:NO];
+}
+
+-(void)dismiss
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

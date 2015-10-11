@@ -70,8 +70,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-LB-U8e">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-LB-U8e">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ULI-ex-ni4" appends="YES" id="tAh-XT-2wg"/>
+                                    <outletCollection property="gestureRecognizers" destination="Nns-xm-9LD" appends="YES" id="dX9-p1-f9V"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pW1-ZY-qmv">
                                 <rect key="frame" x="42" y="105" width="237" height="21"/>
@@ -79,15 +84,39 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CS2-DP-LSC">
+                                <rect key="frame" x="150" y="388" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uploading your vote..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MM4-a6-NpM">
+                                <rect key="frame" x="42" y="334" width="237" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aVD-Wi-oV2"/>
                     <connections>
+                        <outlet property="imageLoadingIndicator" destination="CS2-DP-LSC" id="k8y-r4-o7A"/>
+                        <outlet property="leftSwipe" destination="ULI-ex-ni4" id="ABi-eV-28m"/>
+                        <outlet property="restImage" destination="yLc-LB-U8e" id="LWv-6j-ngs"/>
                         <outlet property="restaurantName" destination="pW1-ZY-qmv" id="eFv-68-EFP"/>
+                        <outlet property="rightSwipe" destination="Nns-xm-9LD" id="TDg-nG-2f9"/>
+                        <outlet property="uploadingLabel" destination="MM4-a6-NpM" id="ehz-vf-30c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUW-eU-ydq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="ULI-ex-ni4">
+                    <connections>
+                        <action selector="leftSwipeHappened:" destination="LWa-tv-1kS" id="oJX-Ut-sb6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Nns-xm-9LD">
+                    <connections>
+                        <action selector="rightSwipeHappened:" destination="LWa-tv-1kS" id="UnR-l3-0xy"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1100" y="-138"/>
         </scene>
@@ -158,6 +187,10 @@
         <scene sceneID="p5W-tu-OUv">
             <objects>
                 <viewController id="Ygx-rv-LEm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="icz-fd-xVR"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Bs-LC-dzB"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qYU-jE-swa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

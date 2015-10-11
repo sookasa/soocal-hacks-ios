@@ -20,8 +20,8 @@
     if (self) {
         self.identifier = [dict objectForKey:@"id"];
         self.name = [dict objectForKey:@"name"];
-        self.pictureUrl = [dict objectForKey:@"pictureUrl"];
-        self.yelpUrl = [dict objectForKey:@"yelpUrl"];
+        self.pictureUrl = [dict objectForKey:@"picture"];
+        self.yelpUrl = [dict objectForKey:@"yelp"];
         self.tags = [[dict objectForKey:@"tags"] copy];
     }
     return self;

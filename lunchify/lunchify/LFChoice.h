@@ -14,4 +14,7 @@
 @property (strong, atomic) LFRestaurant*                    restaurant;
 @property (assign, atomic) BOOL                             userFeedback;
 
+
+-(NSDictionary*)getDictionary;
+
 @end
