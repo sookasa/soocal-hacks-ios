@@ -28,6 +28,8 @@
     [self.activityIndicator setHidesWhenStopped:YES];
     
     [self.errorLabel setHidden:YES];
+    
+    [self.emailTextView setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,6 +89,14 @@
 - (void)castVoteReturnedWithError:(NSError *)err
 {
     
+}
+
+#pragma mark - UITextViewDelegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.emailTextView resignFirstResponder];
+    return NO;
 }
 
 @end

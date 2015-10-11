@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "LFServerApi.h"
 
-@interface LFFirstViewController : UIViewController <LFServerApiDelegate>
+@interface LFFirstViewController : UIViewController <LFServerApiDelegate, UITextFieldDelegate>
 
 @end
